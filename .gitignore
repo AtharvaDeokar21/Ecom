@@ -1,0 +1,55 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+*.pyo
+*.mo
+*.pkl
+
+# If you are using Django staticfiles, it's better to avoid checking in collected static files:
+# https://docs.djangoproject.com/en/4.1/ref/contrib/staticfiles/
+staticfiles/
+
+# Ignore the file where environment variables are stored
+.env
+
+# If your build process includes creating an env/ directory with virtualenv
+env/
+venv/
+
+# Database files
+*.db
+*.sqlite3
+
+# Ignore the entire media directory (add specific media files you want to ignore instead)
+media/
+
+# Local development settings
+local_settings.py
+
+# If you're using PyCharm:
+.idea/
+
+# If you're using Visual Studio Code:
+.vscode/
+
+# If you're using Jupyter notebooks:
+.ipynb_checkpoints/
+
+# If you're using Docker:
+*.dockerignore
+docker-compose.yml
+docker-compose.override.yml
+Dockerfile
+
+# Ignore node_modules directory if you're using Node.js for frontend dependencies
+node_modules/
+
+# Ignore build output
+build/
+dist/
