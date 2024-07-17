@@ -1,0 +1,38 @@
+.card-text {
+    color: green;
+    font-weight: 800;
+}
+
+.card-title {
+    font-weight: 900;
+    font-size: 1.25rem;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card {
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.pagination .page-item .page-link {
+    color: #28a745;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #28a745;
+    border-color: #28a745;
+    color: black;
+}
+
+.d-grid.gap-2 .btn {
+    margin-top: 0.5rem;
+}
