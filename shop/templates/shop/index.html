@@ -26,9 +26,10 @@
                     <div class="card-body d-flex flex-column">
                         <h5 id="nm{{ product.id }}" class="card-title">{{ product.title }}</h5>
                         <p class="card-text mt-auto">
-                            <span id="mrp{{ product.id }}" class="text-muted text-decoration-line-through">{{ product.price }}</span>
-                            <span id="price{{ product.id }}" class="text-danger fw-bold">{{ product.discount_price }}</span>
+                            <span id="mrp{{ product.id }}" class="text-danger text-decoration-line-through">{{ product.price }}</span>
+                            <span id="price{{ product.id }}" class="text-success fw-bold">{{ product.discount_price }}</span>
                         </p>
+                        <p class="card-text">{{ product.description }}</p>
                         <div class="d-grid gap-2 mt-3">
                             <a href="/{{ product.id }}" class="btn btn-warning">View</a>
                             <button id="{{ product.id }}" class="btn btn-warning atc">Add to cart</button>

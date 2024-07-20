@@ -19,33 +19,33 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="name">Name</label>
-                        <input id="name" name="name" type="text" class="form-control" placeholder="John" autocomplete="name">
+                        <input id="name" name="name" type="text" class="form-control bg-dark" placeholder="John" autocomplete="name">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="email">Email</label>
-                        <input id="email" name="email" type="email" class="form-control" placeholder="john@john.com" autocomplete="email">
+                        <input id="email" name="email" type="email" class="form-control bg-dark" placeholder="john@john.com" autocomplete="email">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="address">Address</label>
-                    <input id="address" name="address" type="text" class="form-control" placeholder="1234 Main St" autocomplete="street-address">
+                    <input id="address" name="address" type="text" class="form-control bg-dark" placeholder="1234 Main St" autocomplete="street-address">
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="city">City</label>
-                        <input id="city" name="city" type="text" class="form-control" autocomplete="address-level2">
+                        <input id="city" name="city" type="text" class="form-control bg-dark" autocomplete="address-level2">
                     </div>
                     <div class="form-group col-md-4">
                         <label for="state">State</label>
-                        <input id="state" name="state" type="text" class="form-control" autocomplete="address-level1">
+                        <input id="state" name="state" type="text" class="form-control bg-dark" autocomplete="address-level1">
                     </div>
                     <div class="form-group col-md-2">
                         <label for="zipcode">Zip</label>
-                        <input id="zipcode" name="zipcode" type="text" class="form-control" autocomplete="postal-code">
+                        <input id="zipcode" name="zipcode" type="text" class="form-control bg-dark" autocomplete="postal-code">
                     </div>
                     <div class="form-group col-md-2">
                         <label for="total">Amount to be paid</label>
-                        <input readonly type="text" name="total" id="total" class="form-control">
+                        <input readonly type="text" name="total" id="total" class="form-control bg-dark text-white">
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary mt-2">Place Order</button>
@@ -82,12 +82,12 @@
         totalDiscounted += price * quantity;
 
         let itemstr = `
-            <li class="list-group-item d-flex justify-content-between align-items-center">
+            <li class="list-group-item d-flex justify-content-between align-items-center text-white">
                 <div class="d-flex w-100 justify-content-between align-items-center">
                     <div class="me-3">
                         <strong>${quantity}x</strong> ${name}
                     </div>
-                    <div class="text-muted font-italic me-3">
+                    <div class="text-success font-italic me-3">
                         ₹${(price * quantity).toFixed(2)}
                     </div>
                 </div>
@@ -101,9 +101,9 @@
     // Display totals
     let totalprice = `
         <li class="list-group-item d-flex justify-content-between align-items-center">
-            <div class="d-flex w-100 justify-content-between align-items-center">
-                <strong>Your Total</strong>
-                <span>₹${totalDiscounted.toFixed(2)}</span>
+            <div class="d-flex w-100 justify-content-between align-items-center font-italic">
+                <strong class="text-white">Your Total</strong>
+                <span class="text-success">₹${totalDiscounted.toFixed(2)}</span>
             </div>
         </li>
     `;

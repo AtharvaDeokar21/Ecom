@@ -1,22 +1,49 @@
-.card-text {
-    color: green;
-    font-weight: 800;
+/* General Styles */
+body {
+    background-color: #121212; /* Dark background for the whole page */
+    color: #e0e0e0; /* Light text color for readability */
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #1f1f1f !important; /* Ensure the navbar has the dark background */
+}
+
+.navbar-brand, .nav-link {
+    color: #e0e0e0 !important; /* Ensure text color in the navbar is light */
+}
+
+.nav-link:hover {
+    color: #1db954 !important; /* Ensure the hover color is applied */
+}
+
+/* Navbar Toggler */
+.navbar-toggler-icon {
+    background-color: #e0e0e0; /* Color for the toggle icon */
+}
+
+/* Additional Navbar Styles if needed */
+.navbar .navbar-nav .nav-link {
+    font-weight: 600; /* Optional: Adjust font weight for better readability */
+}
+
+
+.card {
+    background-color: #1e1e1e; /* Dark background for cards */
+    border: 1px solid #333; /* Slightly lighter border */
 }
 
 .card-title {
-    font-weight: 900;
-    font-size: 1.25rem;
+    color: #e0e0e0; /* Light color for card titles */
+}
+
+.card-text {
+    color: #b0b0b0; /* Lighter color for card text */
+    font-weight: 600; /* Slightly lighter font weight */
 }
 
 .card-img-top {
-    height: 200px;
-    object-fit: cover;
-}
-
-.card {
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.3s ease;
+    border-bottom: 1px solid #333; /* Border below image */
 }
 
 .card:hover {
@@ -24,63 +51,41 @@
 }
 
 .pagination .page-item .page-link {
-    color: #28a745;
+    color: #1db954; /* Highlight color for pagination links */
 }
 
 .pagination .page-item.active .page-link {
-    background-color: #28a745;
-    border-color: #28a745;
-    color: black;
+    background-color: #1db954; /* Background color for active pagination link */
+    border-color: #1db954;
+    color: #121212; /* Dark color for text on active link */
 }
 
-.d-grid.gap-2 .btn {
-    margin-top: 0.5rem;
+.btn {
+    border-radius: 0.25rem;
+}
+
+.btn-warning {
+    background-color: #1db954; /* Green color for buttons */
+    border-color: #1db954;
+}
+
+.btn-warning:hover {
+    background-color: #1aab49; /* Slightly darker green on hover */
+    border-color: #1aab49;
 }
 
 .list-group-item {
-    padding: 1rem;
-    border: 1px solid #dee2e6;
-    border-radius: 0.375rem;
-    margin-bottom: 0.5rem;
-    background-color: #ffffff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    background-color: #1e1e1e; /* Dark background for list group items */
+    border: 1px solid #333; /* Border color for list group items */
 }
 
-.list-group-item .btn-danger {
-    margin-left: 0.5rem; /* Adjust spacing for delete button */
-    padding: 0.25rem 0.5rem;
+.alert-success {
+    background-color: #343a40; /* Dark background for alerts */
+    color: #d4edda; /* Light text color */
+    border-color: #1e1e1e;
 }
 
-.text-muted {
-    color: #6c757d;
+.font-italic {
+    color: #b0b0b0; /* Light color for italic text */
 }
 
-.font-italic{
-    font-style: italic;
-}
-
-.alert-success{
-    background-color: #d4edda;
-    color: #155724;
-    border-color: #c3e6cb;
-}
-
-.me-3{
-    margin-right: 1rem;
-}
-
-.mt-3{
-    margin-top: 1rem;
-}
-
-.w-100{
-    width: 100%;
-}
-
-.btn{
-    font-size: 0.875rem;
-    line-height: 1.5;
-    border-radius: 0.25rem;
-}

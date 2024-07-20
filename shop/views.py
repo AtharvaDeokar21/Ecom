@@ -18,6 +18,16 @@ def index(request):
     
     return render(request, 'shop/index.html', {'product_objects':product_objects})
 
+def features_view(request):
+    categories = ['Electronics', 'Fashion', 'Beauty', 'Books', 'Home Appliances']
+    products_by_category = {category: Product.objects.filter(category=category) for category in categories}
+    
+    context = {
+        'products_by_category': products_by_category,
+    }
+    
+    return render(request, 'shop/features.html', context)
+
 def detail(request, id):
     product_object = Product.objects.get(id=id)
     return render(request, 'shop/detail.html', {'product_object':product_object})

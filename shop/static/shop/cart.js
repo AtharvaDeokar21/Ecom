@@ -1,9 +1,36 @@
+// Initialize cart from localStorage
 if (localStorage.getItem('cart') == null) {
     var cart = {};
 } else {
     cart = JSON.parse(localStorage.getItem('cart'));
 }
 
+// Function to update cart count
+function updateCartCount() {
+    let count = 0;
+    for (let item in cart) {
+        count += cart[item][1]; // Sum up the quantities
+    }
+    document.getElementById("cart").innerHTML = "Cart(" + count + ")";
+}
+
+// Function to display cart items in the popover
+function displayCart() {
+    var cartStr = "<h5>This is your cart</h5>";
+    var cartIdx = 1;
+
+    for (let item in cart) {
+        cartStr += cartIdx + ". ";
+        cartStr += `Name - ${cart[item][0]}, Quantity - ${cart[item][1]}, Price - ${cart[item][2]}, MRP - ${cart[item][3]}<br/>`;
+        cartIdx += 1;
+    }
+
+    cartStr += "<a href='/checkout'><button class='btn btn-warning' id='checkout'>Checkout</button></a>";
+    document.getElementById("cart").setAttribute('data-content', cartStr);
+    $('[data-toggle="popover"]').popover(); // Initialize popover
+}
+
+// Add to cart functionality
 $(document).on('click', '.atc', function() {
     var item_id = this.id.toString();
 
@@ -26,29 +53,11 @@ $(document).on('click', '.atc', function() {
     localStorage.setItem('cart', JSON.stringify(cart));
     console.log("Cart updated:", cart); // Debugging: Check the cart content
     updateCartCount();
-    DisplayCart(cart);
+    displayCart();
 });
 
-function updateCartCount() {
-    document.getElementById("cart").innerHTML = "Cart(" + Object.keys(cart).length + ")";
-}
-
-function DisplayCart(cart) {
-    var cartstr = "<h5>This is your cart</h5>";
-    var cartidx = 1;
-
-    for (let item in cart) {
-        cartstr += cartidx + ". ";
-        cartstr += `Name - ${cart[item][0]}, Quantity - ${cart[item][1]}, Price - ${cart[item][2]}, MRP - ${cart[item][3]}<br/>`;
-        cartidx += 1;
-    }
-
-    cartstr += "<a href='/checkout'><button class='btn btn-warning' id='checkout'>Checkout</button></a>";
-    document.getElementById("cart").setAttribute('data-content', cartstr);
-    $('[data-toggle="popover"]').popover();
-}
-
+// Initialize cart count and display cart
 $(document).ready(function() {
     updateCartCount();
-    DisplayCart(cart);
+    displayCart();
 });
