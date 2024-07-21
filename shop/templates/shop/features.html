@@ -32,7 +32,7 @@
                         {% endif %}
                         <p class="card-text">{{ product.description }}</p>
                         <div class="d-grid gap-2">
-                            <button id="{{ product.id }}" class="btn btn-warning atc">Add to cart</button>
+                            <button id="{{ product.id }}" class="btn btn-warning atc1">Add to cart</button>
                             <a href="{% url 'detail' product.id %}" class="btn btn-warning">View</a>
                         </div>
                     </div>
@@ -49,7 +49,7 @@
 <script type="text/javascript">
     $(document).ready(function() {
         // Add to Cart functionality
-        $('.atc').click(function() {
+        $('.atc1').click(function() {
             var item_id = this.id.toString();
 
             let price = parseFloat(document.getElementById("price" + item_id).innerHTML.replace('Discount: ₹', ''));
@@ -70,7 +70,6 @@
 
             localStorage.setItem('cart', JSON.stringify(cart));
             console.log("Cart updated:", cart); // Debugging: Check the cart content
-            alert('Item added to cart');
             updateCartCount();
             displayCart();
         });

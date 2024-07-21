@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Product, Order
 from django.core.paginator import Paginator
 # Create your views here.
@@ -19,7 +19,7 @@ def index(request):
     return render(request, 'shop/index.html', {'product_objects':product_objects})
 
 def features_view(request):
-    categories = ['Electronics', 'Fashion', 'Beauty', 'Books', 'Home Appliances']
+    categories = ['Electronics', 'Fashion', 'Beauty', 'Books', 'Home Appliances', 'Footwear', 'Watches', 'Kitchen Appliances']
     products_by_category = {category: Product.objects.filter(category=category) for category in categories}
     
     context = {
@@ -46,5 +46,9 @@ def checkout(request):
         
         order = Order(items=items, name=name, email=email, address=address, city=city, state=state, zipcode=zipcode, total=total)
         order.save()
+        return redirect('thankyou')
     
     return render(request, 'shop/checkout.html')
+
+def thankyou(request):
+    return  render(request, 'shop/thankyou.html')

@@ -15,13 +15,13 @@
             <div class="card">
                 <div class="card-body">
                     <h3 class="card-title" id="nm{{ product_object.id }}">{{ product_object.title }}</h3>
-                    <h4 class="card-subtitle mb-2 text-decoration-line-through text-danger" id="mrp{{ product_object.id }}">₹{{ product_object.price }}</h4>
+                    <h6 class="card-subtitle mb-2 text-decoration-line-through text-danger" id="mrp{{ product_object.id }}">MRP: ₹{{ product_object.price }}</h6>
                    
-                    <h5 class="card-text text-success" id="price{{ product_object.id }}">Discount: ₹{{ product_object.discount_price }}</h5>
+                    <h4 class="card-text text-success" id="price{{ product_object.id }}">₹{{ product_object.discount_price }}</h4>
 
                     <p class="card-text">{{ product_object.description }}</p>
                     <div class="d-grid gap-2 mt-3">
-                        <button id="{{ product_object.id }}" class="btn btn-warning atc">Add to cart</button>
+                        <button id="{{ product_object.id }}" class="btn btn-warning atc1">Add to cart</button>
                     </div>
                 </div>
             </div>
@@ -33,11 +33,11 @@
 {% block script %}
 <script type="text/javascript">
     $(document).ready(function() {
-        $('.atc').click(function() {
+        $('.atc1').click(function() {
             var item_id = this.id.toString();
 
-            let price = parseFloat(document.getElementById("price" + item_id).innerHTML.replace('Discount: ₹', ''));
-            let mrp = parseFloat(document.getElementById("mrp" + item_id).innerHTML.replace('₹', ''));
+            let price = parseFloat(document.getElementById("price" + item_id).innerHTML.replace('₹', ''));
+            let mrp = parseFloat(document.getElementById("mrp" + item_id).innerHTML.replace('MRP: ₹', ''));
             let name = document.getElementById("nm" + item_id).innerHTML;
 
             // Ensure price and mrp are valid numbers
@@ -47,9 +47,11 @@
             if (cart[item_id] != undefined) {
                 // Update existing item
                 cart[item_id][1] += 1; // Increase quantity
+                console.log(cart);
             } else {
                 // Add new item
                 cart[item_id] = [name, 1, price, mrp];
+                console.log(cart)
             }
 
             localStorage.setItem('cart', JSON.stringify(cart));

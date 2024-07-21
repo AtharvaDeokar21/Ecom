@@ -24,4 +24,5 @@ urlpatterns = [
     path('features/', views.features_view, name='features'),
     path('<int:id>/', views.detail, name='detail'),
     path('checkout/', views.checkout, name="checkout"),
+    path('thankyou/', views.thankyou, name='thankyou')
 ]
