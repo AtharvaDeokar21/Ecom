@@ -107,7 +107,7 @@ AuraShop is a modern eCommerce web application built with Django. It provides us
 
 ## Demo Video
 
-Watch the demo video [here](screenshots/AuraShop.mp4).
+Watch the demo video [https://www.loom.com/share/5295cf87cb4a46d0bcbac5624cf65873?sid=e99d50ad-e671-402e-88dc-7ddfc468566e].
 
 ## Contributing
 
